@@ -39,7 +39,7 @@ public class Server {
 
             SSLServerSocketFactory sslServerSocketFactory = context.getServerSocketFactory();
             SSLServerSocket sslServerSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(9090);
-            sslServerSocket.setNeedClientAuth(true); // 服务器需要验证客户端身份
+            sslServerSocket.setNeedClientAuth(true); // 服务器需要验证客户端身份，通过信任的客户端证书（TrustManagerFactory）
 
             // 启动服务器，监听端口，实现业务逻辑
             while (true) {
